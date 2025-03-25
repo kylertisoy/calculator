@@ -33,5 +33,41 @@
     </div>
 
     <script src="script.js"></script> <!-- Link to external JavaScript -->
+    <script>
+        // JavaScript for handling functionality
+
+        // Get elements
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const result = document.getElementById('result');
+        const clearBtn = document.getElementById('clearBtn');
+        const addBtn = document.getElementById('addBtn');
+        const exitBtn = document.getElementById('exitBtn');
+
+        // Add event listener for the Add button
+        addBtn.addEventListener('click', function() {
+            const number1 = parseFloat(num1.value);
+            const number2 = parseFloat(num2.value);
+
+            if (!isNaN(number1) && !isNaN(number2)) {
+                const sum = number1 + number2;
+                result.value = sum;
+            } else {
+                alert("Please enter valid numbers in both fields.");
+            }
+        });
+
+        // Add event listener for the Clear button
+        clearBtn.addEventListener('click', function() {
+            num1.value = '';
+            num2.value = '';
+            result.value = '';
+        });
+
+        // Add event listener for the Exit button
+        exitBtn.addEventListener('click', function() {
+            window.close(); // This will close the window (works in some browsers)
+        });
+    </script>
 </body>
 </html>
